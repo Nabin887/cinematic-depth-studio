@@ -148,5 +148,38 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    overflow-x: hidden;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    letter-spacing: -0.04em;
+  }
+  .text-glow {
+    text-shadow: 0 0 40px oklch(0.72 0.25 320 / 0.7), 0 0 80px oklch(0.78 0.18 220 / 0.4);
+  }
+  .bg-cosmic {
+    background: var(--gradient-cosmic);
+  }
+  .text-cosmic {
+    background: linear-gradient(135deg, oklch(0.85 0.15 85), oklch(0.7 0.28 340), oklch(0.78 0.18 220));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  @keyframes drift {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(20px, -30px); }
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 }
